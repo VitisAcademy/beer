@@ -1,0 +1,106 @@
+.crossword{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 280px 50px;
+  grid-row-gap: 10px;
+
+  @media screen and (min-width: 600px){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 50px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
+.cross__question{
+  grid-area: ~"1 / 1 / 2 / 5";
+  @media screen and (min-width: 600px){
+    grid-area: ~"1 / 1 / 3 / 2";
+  }
+}
+.cross__word{
+  grid-area: ~"2 / 1 / 3 / 5";
+  @media screen and (min-width: 600px){
+    grid-area: ~"1 / 2 / 2 / 3";
+  }
+}
+.cross__button{
+  grid-area: ~"3 / 1 / 4 / 5";
+  @media screen and (min-width: 600px){
+    grid-area: ~"2 / 2 / 3 / 3";
+  }
+}
+
+// ======== //
+
+.cross__question{
+  width: calc(~"300px + 200 * ((100vw - 320px) / 880)");
+  height: 100%;
+  & span{}
+}
+
+// ======== //
+
+.cross__word{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+
+  width: 240px;
+  height: 220px;
+
+  color: #282828;
+
+  @media screen and (min-width: 600px){
+    width: 360px;
+    height: 330px;
+  }
+}
+.word1 { grid-area: ~"3 / 4 / 9 / 5"; }
+.word2 { grid-area: ~"7 / 6 / 8 / 13"; }
+.word3 { grid-area: ~"5 / 12 / 11 / 13"; }
+.word4 { grid-area: ~"7 / 9 / 12 / 10"; }
+.word5 { grid-area: ~"4 / 1 / 5 / 8"; }
+.word6 { grid-area: ~"2 / 9 / 5 / 10"; }
+.word7 { grid-area: ~"2 / 6 / 3 / 12"; }
+.word8 { grid-area: ~"1 / 7 / 9 / 8"; }
+.horizon{
+  display: flex;
+}
+.vertical{
+  display: flex;
+  flex-direction: column;
+}
+.cross__input{
+  width: 20px;
+  height: 20px;
+
+  background-color: white;
+  border-radius: 50%;
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 18px;
+  color: inherit;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media screen and (min-width: 600px){
+    width: 30px;
+    height: 30px;
+
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+// ======== //
+
+.textCorrect{
+  color: green;
+}
+.textWrong{
+  color: red;
+}
+
